@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# env
+.env
+.env.local
+*.env.local
+
+# logs
+*.log
+
+# Java / Gradle
+backend/.gradle/
+backend/build/
+backend/out/
+backend/bin/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.turbo/
+
+# Docker
+infra/.data/

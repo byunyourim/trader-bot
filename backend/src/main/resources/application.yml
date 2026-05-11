@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: trader-bot
+
+  profiles:
+    active: local
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:traderbot}
+    username: ${POSTGRES_USER:traderbot}
+    password: ${POSTGRES_PASSWORD:traderbot}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+    open-in-view: false
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+kis:
+  base-url: ${KIS_BASE_URL:https://openapi.koreainvestment.com:9443}
+  ws-url: ${KIS_WS_URL:ws://ops.koreainvestment.com:21000}
+  app-key: ${KIS_APP_KEY:}
+  app-secret: ${KIS_APP_SECRET:}
+  account-no: ${KIS_ACCOUNT_NO:}
+  account-product-code: ${KIS_ACCOUNT_PRODUCT_CODE:01}
+  paper-trading: ${KIS_PAPER_TRADING:true}
+
+logging:
+  level:
+    root: INFO
+    com.byunyourim.traderbot: DEBUG
