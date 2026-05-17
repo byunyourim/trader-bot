@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class KisAuthService {
 
 	static final String TOKEN_KEY = "kis:access-token";
+	static final String APPROVAL_KEY = "kis:approval-key";
 
 	private final KisProperties properties;
 	private final StringRedisTemplate redisTemplate;
@@ -27,6 +28,35 @@ public class KisAuthService {
 			return cached;
 		}
 		return fetchAndCache();
+	}
+
+	public String getApprovalKey() {
+		String cached = redisTemplate.opsForValue().get(APPROVAL_KEY);
+		if (cached != null) {
+			return cached;
+		}
+		return fetchApprovalKey();
+	}
+
+	@SuppressWarnings("unchecked")
+	private String fetchApprovalKey() {
+		Map<String, Object> response = kisWebClient.post()
+				.uri("/oauth2/Approval")
+				.bodyValue(Map.of("grant_type", "client_credentials", "appkey", properties.appKey(), "secretkey",
+						properties.appSecret()))
+				.retrieve()
+				.bodyToMono(Map.class)
+				.block();
+
+		if (response == null || !response.containsKey("approval_key")) {
+			throw new IllegalStateException("KIS WebSocket approval key 발급 실패");
+		}
+
+		String key = (String) response.get("approval_key");
+		// approval key TTL: 1일
+		redisTemplate.opsForValue().set(APPROVAL_KEY, key, Duration.ofHours(23));
+		log.info("KIS WebSocket approval key 발급 완료");
+		return key;
 	}
 
 	@SuppressWarnings("unchecked")
