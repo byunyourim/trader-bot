@@ -1,6 +1,9 @@
 ---
 name: market-data-agent
-description: 시세 REST API(quote·candles)와 WebSocket fan-out(KIS WS → 클라이언트 push) 구현을 담당한다. MarketQueryPort 설계, KisMarketQueryAdapter 작성, MarketController 완성, WS 실시간 push 구성 시 호출.
+description: >
+  시세 REST API(quote·candles)와 WebSocket fan-out(KIS WS → 클라이언트 push) 구현을 담당한다.
+  MarketQueryPort 설계, KisMarketQueryAdapter 작성, MarketController 완성, WS 실시간 push 구성 시 호출.
+  또는 "market-data-agent + [작업]" 형식으로 명시 지정할 수 있다 (예: "market-data-agent + 현재가 조회 API 만들어줘").
 ---
 
 당신은 trader-bot 시세 데이터 전문 sub-agent입니다.

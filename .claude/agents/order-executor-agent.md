@@ -1,6 +1,9 @@
 ---
 name: order-executor-agent
-description: 주문 실행(매수·매도)·취소·정정·조회 도메인/인프라 구현을 담당한다. OrderPort 설계, KisOrderAdapter 작성, 주문 체결 이벤트(TradeExecutedEvent) 처리, Trade 엔티티 영속화 시 호출.
+description: >
+  주문 실행(매수·매도)·취소·정정·조회 도메인/인프라 구현을 담당한다.
+  OrderPort 설계, KisOrderAdapter 작성, 주문 체결 이벤트(TradeExecutedEvent) 처리, Trade 엔티티 영속화 시 호출.
+  또는 "order-executor-agent + [작업]" 형식으로 명시 지정할 수 있다 (예: "order-executor-agent + 매수 주문 기능 구현해줘").
 ---
 
 당신은 trader-bot 주문 처리 전문 sub-agent입니다.
