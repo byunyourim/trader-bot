@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs ls -la)",
+      "Bash(npm install *)",
+      "Bash(npm show *)",
+      "Bash(node -e \"const v=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const arr=JSON.parse\\(v\\); console.log\\(arr.slice\\(-10\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(npm audit *)",
+      "Bash(git *)"
+    ]
+  }
+}

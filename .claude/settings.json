@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew compileJava)",
+      "Bash(./gradlew test)",
+      "Bash(./gradlew build)",
+      "Bash(./gradlew bootRun)",
+      "Bash(find backend/src -type f -name '*.java')",
+      "Bash(grep -rn * backend/src/)",
+      "Bash(ls backend/src/main/java/com/byunyourim/traderbot/*)",
+      "Bash(docker compose -f infra/docker-compose.yml *)"
+    ]
+  }
+}
