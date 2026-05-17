@@ -6,7 +6,18 @@
       "Bash(npm show *)",
       "Bash(node -e \"const v=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const arr=JSON.parse\\(v\\); console.log\\(arr.slice\\(-10\\).join\\('\\\\n'\\)\\)\")",
       "Bash(npm audit *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(rm /Users/byunyourim/IdeaProjects/trader-bot/.claude/agents/architecture-fit-reviewer.md)",
+      "Bash(rm /Users/byunyourim/IdeaProjects/trader-bot/.claude/agents/config-propagation-checker.md)",
+      "Bash(rm -rf /Users/byunyourim/IdeaProjects/trader-bot/.claude/skills/stablecoin-ops/)",
+      "Bash(cp -r /Users/byunyourim/IdeaProjects/trader-bot/backend/gradle /Users/byunyourim/IdeaProjects/trader-bot/gradle)",
+      "Bash(chmod +x /Users/byunyourim/IdeaProjects/trader-bot/gradlew)",
+      "Bash(./gradlew :backend:compileJava)",
+      "Bash(../gradlew :backend:compileJava)",
+      "Bash(./gradlew :backend:spotlessCheck)",
+      "Bash(./gradlew :backend:spotlessApply)",
+      "Bash(grep -v \"^$\")",
+      "Bash(./gradlew --stop)"
     ]
   }
 }

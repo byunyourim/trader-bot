@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ConfigurationPropertiesScan
 public class TraderBotApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(TraderBotApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(TraderBotApplication.class, args);
+	}
 }

@@ -1,4 +1,4 @@
-package com.byunyourim.traderbot.infrastructure.kis;
+package com.byunyourim.traderbot.infra.kis;
 
 public class KisWebSocketClient {
 }
