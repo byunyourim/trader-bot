@@ -31,7 +31,7 @@ public class KisRestClient {
 
 		String rtCd = (String) response.get("rt_cd");
 		if (!"0".equals(rtCd)) {
-			throw new KisResponseException((String) response.get("msg1"));
+			throw new KisResponseException((String) response.get("msg_cd"), (String) response.get("msg1"));
 		}
 
 		return response;

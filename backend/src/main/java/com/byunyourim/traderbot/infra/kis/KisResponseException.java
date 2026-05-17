@@ -1,8 +1,13 @@
 package com.byunyourim.traderbot.infra.kis;
 
-public class KisResponseException extends RuntimeException {
+import com.byunyourim.traderbot.application.ApplicationException;
+import com.byunyourim.traderbot.application.ErrorStatus;
 
-	public KisResponseException(String message) {
-		super(message);
+public class KisResponseException extends ApplicationException {
+
+	public KisResponseException(String msgCd, String msg1) {
+		super(ErrorStatus.KIS_API_ERROR);
+		withDetail("kisCode", msgCd);
+		withDetail("kisMessage", msg1);
 	}
 }
